@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3
-
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name.capitalize()
@@ -17,13 +15,14 @@ class Plant:
 
 
 if __name__ == '__main__':
-    initial_height = 25.0
-    random_plant = Plant("ROSE", initial_height, 30)
-    print("=== Garden Plant Growth ===")
-    for i in range(7):
-        print(f"=== Day {(i + 1)}===")
-        random_plant.show()
-        random_plant.grow()
-        random_plant.age()
-        i = i + 1
-    print(f"Growth this week: {round(random_plant.height - initial_height)}cm")
+    print("=== Plant Factory Output ===")
+    plants = [
+        Plant("ROSE", 25, 30),
+        Plant("Oak", 200.0, 365),
+        Plant("Cactus", 5, 90),
+        Plant("Sunflower", 80, 45),
+        Plant("Fern", 15, 120)
+    ]
+    for plant in plants:
+        print(f"Created: {plant.name}: {plant.height}cm,"
+              f" {plant.aage} days old")

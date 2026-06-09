@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 class Plant:
     def __init__(self, name: str, height: int, age: int) -> None:
         self.name = name
@@ -5,7 +7,7 @@ class Plant:
         self.age = age
 
     def show(self) -> None:
-        print(self.name + ":", self.height, "cm,", self.age, "days old")
+        print(f"{self.name}: {self.height}cm, {self.age} days old ")
 
 
 if __name__ == '__main__':

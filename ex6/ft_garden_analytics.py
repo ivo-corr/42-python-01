@@ -1,20 +1,20 @@
 class Plant:
     class Stats:
-        def __init__(self, grow=0, age=0, show=0):
+        def __init__(self, grow: int = 0, age: int = 0, show: int = 0) -> None:
             self._grow = grow
             self._age = age
             self._show = show
 
-        def incr_grow(self):
+        def incr_grow(self) -> None:
             self._grow = self._grow + 1
 
-        def incr_age(self):
+        def incr_age(self) -> None:
             self._age = self._age + 1
 
-        def incr_show(self):
+        def incr_show(self) -> None:
             self._show = self._show + 1
 
-        def display(self):
+        def display(self) -> None:
             print(f"Stats: {self._grow} grow, {self._age} age, "
                   f"{self._show} show")
 
@@ -75,7 +75,7 @@ class Flower(Plant):
         self._bloomed = False
         self._stats = self.Stats()
 
-    def grow(self):
+    def grow(self) -> None:
         super().grow()
         self.set_height(self.get_height() + 8)
 
@@ -101,11 +101,11 @@ class Seed(Flower):
         super().bloom()
         self._seeds = 42
 
-    def grow(self):
+    def grow(self) -> None:
         super().grow()
         self._height = self._height + 22
 
-    def age(self):
+    def age(self) -> None:
         super().age()
         self._age = self._age + 20
 
@@ -116,14 +116,14 @@ class Seed(Flower):
 
 class Tree(Plant):
     class Stats(Plant.Stats):
-        def __init__(self, shade=0):
+        def __init__(self, shade: int = 0) -> None:
             super().__init__()
             self._shade = shade
 
-        def incr_shade(self):
+        def incr_shade(self) -> None:
             self._shade = self._shade + 1
 
-        def display(self):
+        def display(self) -> None:
             super().display()
             print(f" {self._shade} shade")
 
@@ -161,7 +161,7 @@ class Vegetable(Plant):
         self._nutritional_value += 1
 
 
-def display_statistics(plant: Plant):
+def display_statistics(plant: Plant) -> None:
     plant._stats.display()
 
 

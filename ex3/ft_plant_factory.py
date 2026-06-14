@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name.capitalize()
@@ -17,11 +19,11 @@ class Plant:
 if __name__ == '__main__':
     print("=== Plant Factory Output ===")
     plants = [
-        Plant("ROSE", 25, 30),
+        Plant("ROSE", 25.0, 30),
         Plant("Oak", 200.0, 365),
-        Plant("Cactus", 5, 90),
-        Plant("Sunflower", 80, 45),
-        Plant("Fern", 15, 120)
+        Plant("Cactus", 5.0, 90),
+        Plant("Sunflower", 80.0, 45),
+        Plant("Fern", 15.0, 120)
     ]
     for plant in plants:
         print(f"Created: {plant.name}: {plant.height}cm,"

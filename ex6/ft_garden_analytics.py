@@ -1,9 +1,9 @@
 class Plant:
     class Stats:
-        def __init__(self, grow: int = 0, age: int = 0, show: int = 0) -> None:
-            self._grow = grow
-            self._age = age
-            self._show = show
+        def __init__(self) -> None:
+            self._grow = 0
+            self._age = 0
+            self._show = 0
 
         def incr_grow(self) -> None:
             self._grow = self._grow + 1
@@ -19,7 +19,7 @@ class Plant:
                   f"{self._show} show")
 
     def __init__(self, name: str, height: float, age: int) -> None:
-        self._name = name.capitalize()
+        self.name = name.capitalize()
         self._height = height
         self._age = age
         self._stats = self.Stats()
@@ -37,7 +37,7 @@ class Plant:
 
     def show(self) -> None:
         self._stats.incr_show()
-        print(f"{self._name}: {self._height}cm, {self._age} days old ")
+        print(f"{self.name}: {self._height}cm, {self._age} days old ")
 
     def grow(self) -> None:
         self._stats.incr_grow()
@@ -50,7 +50,7 @@ class Plant:
             self._height = height
             print(f"Height updated: {self._height}cm")
         else:
-            print(f"{self._name}: Error, height can't be negative")
+            print(f"{self.name}: Error, height can't be negative")
             print("Height update rejected")
 
     def set_age(self, age: int) -> None:
@@ -58,7 +58,7 @@ class Plant:
             self._age = age
             print(f"Age updated: {self._age} days old")
         else:
-            print(f"{self._name}: Error, age can't be negative")
+            print(f"{self.name}: Error, age can't be negative")
             print("Age update rejected")
 
     def get_height(self) -> float:
@@ -86,9 +86,9 @@ class Flower(Plant):
         super().show()
         print(" Color: " + self._color)
         if (self._bloomed):
-            print(f" {self._name} is blooming beautifully!")
+            print(f" {self.name} is blooming beautifully!")
         else:
-            print(f" {self._name} has not bloomed yet")
+            print(f" {self.name} has not bloomed yet")
 
 
 class Seed(Flower):
@@ -116,9 +116,9 @@ class Seed(Flower):
 
 class Tree(Plant):
     class Stats(Plant.Stats):
-        def __init__(self, shade: int = 0) -> None:
+        def __init__(self) -> None:
             super().__init__()
-            self._shade = shade
+            self._shade = 0
 
         def incr_shade(self) -> None:
             self._shade = self._shade + 1
